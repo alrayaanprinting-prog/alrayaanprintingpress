@@ -14,17 +14,36 @@
   <style>
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg, #111827, #1f2933);
+      margin: 0;
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: #111827;
     }
+
+    /* Background image with opacity */
+   body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(17,24,39,0.50), rgba(31,41,55,0.50)),
+    url("image/1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.45;
+  z-index: -1;
+}
 
     .coming-box {
       max-width: 600px;
       padding: 40px 20px;
+      z-index: 1; /* keeps text above background */
     }
 
     .coming-box h1 {
@@ -34,7 +53,7 @@
     }
 
     .coming-box p {
-      color: #d1d5db;
+      color: #e5e7eb;
       font-size: 1.1rem;
     }
 
@@ -53,7 +72,7 @@
     .footer-text {
       margin-top: 30px;
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: #d1d5db;
     }
   </style>
 </head>
@@ -61,10 +80,12 @@
 <body>
 
   <div class="coming-box">
-    <h1> Alrayaan Printing Press</h1>
+  <h1>Alrayaan Printing Press</h1>
     <h1>Coming Soon</h1>
-    <p>We are working hard to bring you something amazing.<br>
-       Stay connected with us.</p>
+    <p>
+      We are working hard to bring you something amazing.<br>
+      Stay connected with us.
+    </p>
 
     <!-- Social Links -->
     <div class="social-icons mt-4">
@@ -87,4 +108,3 @@
 
 </body>
 </html>
-
